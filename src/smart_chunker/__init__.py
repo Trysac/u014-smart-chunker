@@ -1,21 +1,26 @@
-"""Split CommonMark and GFM Markdown into retrieval chunks along headings, tables and code fences under a token budget, with sentence overlap and line-range metadata"""
+"""Split CommonMark and GFM Markdown into retrieval chunks under a token budget."""
 
 from __future__ import annotations
 
-__all__ = ["__version__", "normalize"]
+from ._chunker import (
+    Block,
+    Chunk,
+    ChunkerError,
+    ChunkOptions,
+    chunk_markdown,
+    default_token_counter,
+    parse_blocks,
+)
+
+__all__ = [
+    "Block",
+    "Chunk",
+    "ChunkOptions",
+    "ChunkerError",
+    "__version__",
+    "chunk_markdown",
+    "default_token_counter",
+    "parse_blocks",
+]
 
 __version__ = "0.1.0"
-
-
-def normalize(value: str) -> str:
-    """Return ``value`` trimmed and lower-cased.
-
-    Placeholder API created by the template: replace it with the utility's real behavior.
-
-    Raises:
-        ValueError: if ``value`` is empty or only whitespace.
-    """
-    cleaned = value.strip()
-    if not cleaned:
-        raise ValueError("value must not be empty")
-    return cleaned.lower()
