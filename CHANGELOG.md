@@ -9,4 +9,5 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Add `chunk_markdown`, `parse_blocks`, `ChunkOptions`, `Block`, `Chunk`, `default_token_counter` and `ChunkerError`: structure-aware Markdown chunking with token budget, sentence overlap, heading paths and line ranges.
 - Initial project structure from the factory utility template.
